@@ -1,7 +1,7 @@
 import React from "react";
 
 const FeaturedGardenersCard = ({ profile }) => {
-  console.log(profile);
+  // console.log(profile);
   const { name, age, image, info } = profile;
   return (
     <div>

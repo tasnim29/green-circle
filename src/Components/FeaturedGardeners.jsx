@@ -6,7 +6,7 @@ const FeaturedGardeners = () => {
   const gardenersProfile = useLoaderData();
 
   return (
-    <div className="my-20 max-w-5xl mx-auto">
+    <div className="mt-20 max-w-5xl mx-auto">
       <h1 className="text-3xl font-semibold mb-8 text-center">
         Featured Gardeners
       </h1>

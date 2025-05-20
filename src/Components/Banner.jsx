@@ -40,7 +40,7 @@ const events = [
 
 const Banner = () => {
   return (
-    <div className="mt-10">
+    <div className="mt-10 max-w-5xl mx-auto">
       <Swiper
         effect={"coverflow"}
         grabCursor={true}
