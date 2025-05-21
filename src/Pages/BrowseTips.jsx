@@ -12,6 +12,7 @@ const BrowseTips = () => {
           <thead>
             <tr>
               <th>No</th>
+              <th>UserName</th>
               <th>Title</th>
               <th>Category</th>
               <th>Image</th>
@@ -22,6 +23,10 @@ const BrowseTips = () => {
             {tips.map((tip, index) => (
               <tr key={tip._id}>
                 <th>{index + 1}</th>
+                <td>
+                  <div className="font-bold">{tip.username}</div>
+                  <div className="text-gray-500">{tip.email}</div>
+                </td>
                 <td>
                   <div className="font-bold">{tip.title}</div>
                 </td>
