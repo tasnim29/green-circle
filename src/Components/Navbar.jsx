@@ -25,7 +25,7 @@ const Navbar = () => {
         <NavLink to="/shareTip"> Share a Garden Tip</NavLink>
       </li>
       <li className="font-semibold text-sm text-green-600 bg-white rounded-xl">
-        <NavLink to="/blog"> My Tips</NavLink>
+        <NavLink to="/myTips"> My Tips</NavLink>
       </li>
     </>
   );

@@ -9,6 +9,7 @@ import ShareGardenTip from "../Pages/ShareGardenTip";
 import PrivateRoutes from "../Private/PrivateRoutes";
 import BrowseTips from "../Pages/BrowseTips";
 import TipDetailsPage from "../Pages/TipDetailsPage";
+import MyTips from "../Pages/MyTips";
 
 export const router = createBrowserRouter([
   {
@@ -48,6 +49,15 @@ export const router = createBrowserRouter([
         element: (
           <PrivateRoutes>
             <TipDetailsPage></TipDetailsPage>
+          </PrivateRoutes>
+        ),
+      },
+      {
+        path: "/myTips",
+        loader: () => fetch("http://localhost:3000/shareTipAll"),
+        element: (
+          <PrivateRoutes>
+            <MyTips></MyTips>
           </PrivateRoutes>
         ),
       },
