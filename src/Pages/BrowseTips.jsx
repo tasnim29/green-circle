@@ -13,9 +13,11 @@ const BrowseTips = () => {
             <tr>
               <th>No</th>
               <th>UserName</th>
-              <th>Title</th>
+              <th>Title & Image</th>
+
               <th>Category</th>
-              <th>Image</th>
+              <th>Difficulty</th>
+
               <th></th>
             </tr>
           </thead>
@@ -28,26 +30,30 @@ const BrowseTips = () => {
                   <div className="text-gray-500">{tip.email}</div>
                 </td>
                 <td>
-                  <div className="font-bold">{tip.title}</div>
+                  <div className="flex items-center gap-3">
+                    <div className="avatar">
+                      <div className="mask mask-squircle h-12 w-12">
+                        <img
+                          src={tip.image}
+                          alt="Avatar Tailwind CSS Component"
+                        />
+                      </div>
+                    </div>
+                    <div>
+                      <div className="font-bold">{tip.title}</div>
+                    </div>
+                  </div>
                 </td>
                 <td>
                   <div className="font-bold">{tip.category}</div>
                 </td>
                 <td>
-                  {" "}
-                  <div className="avatar">
-                    <div className="mask mask-squircle h-12 w-12">
-                      <img
-                        src={tip.image}
-                        alt="Avatar Tailwind CSS Component"
-                      />
-                    </div>
-                  </div>
+                  <div className="font-bold">{tip.difficulty}</div>
                 </td>
                 <th>
                   <Link
                     to={`/tipDetails/${tip._id}`}
-                    className="btn btn-ghost btn-xs"
+                    className="bg-green-600 text-white px-3 py-2 font-bold"
                   >
                     See more
                   </Link>

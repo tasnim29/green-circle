@@ -11,6 +11,8 @@ const ShareGardenTip = () => {
     const newTip = Object.fromEntries(formData.entries());
     // console.log(newTip);
 
+    // newTip.difficulty = parseInt(newTip.difficulty);
+
     //mongodb post
     fetch("http://localhost:3000/shareTip", {
       method: "POST",
