@@ -2,6 +2,7 @@ import React, { use, useState } from "react";
 import { Link, NavLink } from "react-router";
 import logo from "../assets/gardenLogo.jpg";
 import { AuthContext } from "../Context/AuthContext";
+import DarkMode from "./DarkMode";
 
 const Navbar = () => {
   const { user, signOutUser } = use(AuthContext);
@@ -116,6 +117,9 @@ const Navbar = () => {
             </Link>
           </div>
         )}
+        <div>
+          <DarkMode></DarkMode>
+        </div>
       </div>
     </div>
   );
