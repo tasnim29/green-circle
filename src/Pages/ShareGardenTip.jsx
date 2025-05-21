@@ -1,5 +1,6 @@
 import React, { use } from "react";
 import { AuthContext } from "../Context/AuthContext";
+import Swal from "sweetalert2";
 
 const ShareGardenTip = () => {
   const { user } = use(AuthContext);
@@ -22,6 +23,13 @@ const ShareGardenTip = () => {
       .then((data) => {
         console.log("after db", data);
         e.target.reset();
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "Your tip is added",
+          showConfirmButton: false,
+          timer: 1500,
+        });
       });
   };
   return (

@@ -11,6 +11,9 @@ import BrowseTips from "../Pages/BrowseTips";
 import TipDetailsPage from "../Pages/TipDetailsPage";
 import MyTips from "../Pages/MyTips";
 import UpdateTip from "../Pages/UpdateTip";
+import ExploreGardeners from "../Pages/ExploreGardeners";
+import Loader from "../Components/Loader";
+import ErrorPage from "../Pages/ErrorPage";
 
 export const router = createBrowserRouter([
   {
@@ -19,6 +22,7 @@ export const router = createBrowserRouter([
     children: [
       {
         index: true,
+        hydrateFallbackElement: <Loader></Loader>,
         loader: () => fetch("http://localhost:3000/activeG"),
         Component: Home,
       },
@@ -40,11 +44,13 @@ export const router = createBrowserRouter([
       },
       {
         path: "/browseTips",
+        hydrateFallbackElement: <Loader></Loader>,
         loader: () => fetch("http://localhost:3000/shareTip"),
         Component: BrowseTips,
       },
       {
         path: "/tipDetails/:id",
+        hydrateFallbackElement: <Loader></Loader>,
         loader: ({ params }) =>
           fetch(`http://localhost:3000/shareTip/${params.id}`),
         element: (
@@ -55,6 +61,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/myTips/:email",
+        hydrateFallbackElement: <Loader></Loader>,
         loader: ({ params }) =>
           fetch(`http://localhost:3000/shareTipAll/${params.email}`),
         element: (
@@ -65,6 +72,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/updateTip/:id",
+        hydrateFallbackElement: <Loader></Loader>,
         loader: ({ params }) =>
           fetch(`http://localhost:3000/shareTip/${params.id}`),
         element: (
@@ -73,6 +81,16 @@ export const router = createBrowserRouter([
           </PrivateRoutes>
         ),
       },
+      {
+        path: "/exploreGardeners",
+        hydrateFallbackElement: <Loader></Loader>,
+        loader: () => fetch("http://localhost:3000/allGardeners"),
+        Component: ExploreGardeners,
+      },
     ],
+  },
+  {
+    path: "/*",
+    Component: ErrorPage,
   },
 ]);
