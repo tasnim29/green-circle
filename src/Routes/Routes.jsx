@@ -10,6 +10,7 @@ import PrivateRoutes from "../Private/PrivateRoutes";
 import BrowseTips from "../Pages/BrowseTips";
 import TipDetailsPage from "../Pages/TipDetailsPage";
 import MyTips from "../Pages/MyTips";
+import UpdateTip from "../Pages/UpdateTip";
 
 export const router = createBrowserRouter([
   {
@@ -53,11 +54,22 @@ export const router = createBrowserRouter([
         ),
       },
       {
-        path: "/myTips",
-        loader: () => fetch("http://localhost:3000/shareTipAll"),
+        path: "/myTips/:email",
+        loader: ({ params }) =>
+          fetch(`http://localhost:3000/shareTipAll/${params.email}`),
         element: (
           <PrivateRoutes>
             <MyTips></MyTips>
+          </PrivateRoutes>
+        ),
+      },
+      {
+        path: "/updateTip/:id",
+        loader: ({ params }) =>
+          fetch(`http://localhost:3000/shareTip/${params.id}`),
+        element: (
+          <PrivateRoutes>
+            <UpdateTip></UpdateTip>
           </PrivateRoutes>
         ),
       },

@@ -24,8 +24,9 @@ const Navbar = () => {
       <li className="font-semibold text-sm text-green-600 bg-white rounded-xl">
         <NavLink to="/shareTip"> Share a Garden Tip</NavLink>
       </li>
+
       <li className="font-semibold text-sm text-green-600 bg-white rounded-xl">
-        <NavLink to="/myTips"> My Tips</NavLink>
+        <NavLink to={`/myTips/${user?.email}`}> My Tips</NavLink>
       </li>
     </>
   );

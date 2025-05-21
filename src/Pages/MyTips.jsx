@@ -99,7 +99,10 @@ const MyTips = () => {
                   <div className="font-bold">{tip.availability}</div>
                 </td>
                 <th className="flex gap-5">
-                  <Link className="btn btn-ghost btn-xs">
+                  <Link
+                    to={`/updateTip/${tip._id}`}
+                    className="btn btn-ghost btn-xs"
+                  >
                     <MdBrowserUpdated size={24} />
                   </Link>
                   <button
