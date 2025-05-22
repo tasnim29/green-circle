@@ -1,4 +1,4 @@
-import React, { use } from "react";
+import React, { use, useState } from "react";
 import { Link, useLoaderData } from "react-router";
 import { AuthContext } from "../Context/AuthContext";
 
@@ -6,6 +6,16 @@ const BrowseTips = () => {
   const { theme } = use(AuthContext);
   const tips = useLoaderData();
   console.log(tips);
+  const [selectedDiff, setSelectedDiff] = useState("");
+  // console.log(tips);
+  const handleOnchange = (e) => {
+    setSelectedDiff(e.target.value);
+  };
+  const filteredTip =
+    selectedDiff === ""
+      ? tips
+      : tips.filter((Tip) => Tip.difficulty === selectedDiff);
+
   return (
     <div className="max-w-5xl mx-auto my-20">
       <h1
@@ -15,6 +25,25 @@ const BrowseTips = () => {
       >
         🌱 Tips From Users
       </h1>
+      {/* dropdown */}
+      <select
+        defaultValue={""}
+        onChange={handleOnchange}
+        name="difficulty"
+        className={`select select-bordered w-full ${
+          theme === "dark"
+            ? "bg-gray-800 text-white border-gray-600"
+            : "bg-green-50 text-green-900 border-green-500"
+        }`}
+      >
+        <option value="" disabled>
+          Select difficulty
+        </option>
+        <option value="">All</option>
+        <option value="Easy">Easy</option>
+        <option value="Medium">Medium</option>
+        <option value="Hard">Hard</option>
+      </select>
       <div className="overflow-x-auto">
         <table className="table">
           {/* head */}
@@ -35,7 +64,7 @@ const BrowseTips = () => {
             </tr>
           </thead>
           <tbody>
-            {tips.map((tip, index) => (
+            {filteredTip.map((tip, index) => (
               <tr key={tip._id}>
                 <th>{index + 1}</th>
                 <td>

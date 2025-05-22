@@ -8,7 +8,7 @@ const clientsPromise = fetch("/Clients.json").then((res) => res.json());
 
 const ClientOpinion = () => {
   const data = use(clientsPromise);
-  console.log(data);
+  // console.log(data);
   const { theme } = use(AuthContext);
   return (
     <div className="max-w-6xl mx-auto">
@@ -29,8 +29,9 @@ const ClientOpinion = () => {
       </h1>
 
       <section className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-8">
-        {data.map((client) => (
+        {data.map((client, index) => (
           <div
+            key={index}
             className={`p-5 flex gap-5 items-center rounded-xl ${
               theme === "dark" ? "shadow-xl shadow-white " : "shadow-2xl"
             }`}

@@ -1,13 +1,18 @@
-import React, { use } from "react";
+import React, { use, useEffect, useState } from "react";
 import { AuthContext } from "../Context/AuthContext";
-const tipsPromise = fetch("http://localhost:3000/shareTrendingTip").then(
-  (res) => res.json()
-);
+import { GrLike } from "react-icons/gr";
+import { FaRegComments } from "react-icons/fa";
 
 const TrendingTips = () => {
   const { theme } = use(AuthContext);
-  const trendingTips = use(tipsPromise);
+
+  const [trendingTips, setTrendingTips] = useState([]);
   // console.log(trendingTips);
+  useEffect(() => {
+    fetch("http://localhost:3000/shareTrendingTip")
+      .then((res) => res.json())
+      .then((data) => setTrendingTips(data));
+  }, []);
   return (
     <div
       className={`my-20 py-16  ${
@@ -26,7 +31,10 @@ const TrendingTips = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto">
         {trendingTips.map((tip, index) => (
-          <div className="bg-white dark:bg-green-900 p-6 rounded-xl text-center shadow-lg relative">
+          <div
+            key={index}
+            className="bg-white dark:bg-green-900 p-6 rounded-xl text-center shadow-lg relative"
+          >
             <div className="w-12 h-12 bg-green-600 text-white font-bold rounded-full flex items-center justify-center absolute -top-6 left-1/2 transform -translate-x-1/2">
               {index + 1}
             </div>
@@ -38,11 +46,22 @@ const TrendingTips = () => {
               />
             </div>
             <h3 className="text-lg font-bold text-green-800 dark:text-white">
-              {tip.name}
+              {tip.title}
             </h3>
             <p className="text-gray-600 dark:text-gray-300 mt-2">
               {tip.description}
             </p>
+            <div className="flex justify-between items-center mt-5 px-2">
+              <button className="flex items-center gap-1 text-green-700 dark:text-green-200 hover:text-green-900 transition">
+                <GrLike size={20} />
+                <span className="text-sm font-medium">{tip.totalLiked}</span>
+              </button>
+
+              <button className="flex items-center gap-1 text-gray-500 dark:text-gray-300 hover:text-gray-700 transition">
+                <FaRegComments size={20} />
+                <span className="text-sm font-medium">Comment</span>
+              </button>
+            </div>
           </div>
         ))}
       </div>
