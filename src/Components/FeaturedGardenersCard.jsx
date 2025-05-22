@@ -1,11 +1,17 @@
-import React from "react";
+import React, { use } from "react";
+import { AuthContext } from "../Context/AuthContext";
 
 const FeaturedGardenersCard = ({ profile }) => {
+  const { theme } = use(AuthContext);
   // console.log(profile);
   const { name, age, image, info } = profile;
   return (
     <div>
-      <div className="flex flex-col justify-between h-full max-w-xs p-6 shadow-2xl rounded-xl sm:px-12 bg-white mx-auto">
+      <div
+        className={`flex flex-col justify-between h-full max-w-xs p-6 rounded-xl sm:px-12 bg-white mx-auto hover:scale-105 ${
+          theme === "dark" ? "shadow-xl shadow-white" : "shadow-2xl"
+        }`}
+      >
         <img
           src={image}
           alt={name}

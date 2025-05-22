@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Jhankar Mahbub",
+    "image": "https://i.ibb.co/tThgbjzY/jhankarbhai.jpg",
+    "testimonial": "This platform has been a game-changer for my balcony garden! The community is so supportive, and I've learned so much about composting and hydroponics.",
+    "rating": 5
+  },
+  {
+    "name": "Tasnim Mahmud",
+    "image": "https://i.ibb.co/PvNjGBF8/Tasnim.jpg",
+    "testimonial": "I love being able to find local gardeners and attend events nearby. It’s great to connect with people who share my passion for sustainable gardening.",
+    "rating": 4
+  },
+  {
+    "name": "Emily Chen",
+    "image": "https://i.ibb.co/d0tppRbV/wmoan-2.jpg",
+    "testimonial": "The Q&A section is fantastic! Whenever I have a plant care question, I get quick and helpful responses from experienced gardeners.",
+    "rating": 5
+  },
+  {
+    "name": "Emilia Clerk",
+    "image": "https://i.ibb.co/xqd2TnWz/woman-1.jpg",
+    "testimonial": "Joining this gardening community has inspired me to start composting and try new growing techniques. The resources available here are top-notch.",
+    "rating": 4
+  },
+  {
+    "name": "Tom Cruise",
+    "image": "https://i.ibb.co/pvZJfXxM/man-1.jpg",
+    "testimonial": "I’ve met so many wonderful people who share my love for gardening. The event posts keep me busy and motivated to keep improving my garden.",
+    "rating": 3
+  }
+]

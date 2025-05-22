@@ -7,7 +7,7 @@ const tipsPromise = fetch("http://localhost:3000/shareTrendingTip").then(
 const TrendingTips = () => {
   const { theme } = use(AuthContext);
   const trendingTips = use(tipsPromise);
-  console.log(trendingTips);
+  // console.log(trendingTips);
   return (
     <div
       className={`my-20 py-16  ${
