@@ -12,6 +12,17 @@ import {
 import { auth } from "../firebase/firebase.config";
 
 const AuthProvider = ({ children }) => {
+  // dark mode
+  const [theme, setTheme] = useState(localStorage.theme || "light");
+  const colorTheme = theme === "dark" ? "light" : "dark";
+
+  useEffect(() => {
+    const root = window.document.documentElement;
+    root.classList.remove(colorTheme);
+    root.classList.add(theme);
+    localStorage.setItem("theme", theme);
+  }, [theme, colorTheme]);
+
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -51,6 +62,8 @@ const AuthProvider = ({ children }) => {
     signOutUser,
     updateUserProfile,
     loading,
+    theme,
+    setTheme,
   };
 
   useEffect(() => {

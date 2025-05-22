@@ -1,17 +1,30 @@
-import React from "react";
+import React, { use } from "react";
 import { Link, useLoaderData } from "react-router";
+import { AuthContext } from "../Context/AuthContext";
 
 const BrowseTips = () => {
+  const { theme } = use(AuthContext);
   const tips = useLoaderData();
   console.log(tips);
   return (
     <div className="max-w-5xl mx-auto my-20">
+      <h1
+        className={`text-4xl font-bold text-center mb-8 transition duration-1000 ${
+          theme === "dark" ? "text-white " : "text-green-700"
+        }`}
+      >
+        🌱 Tips From Users
+      </h1>
       <div className="overflow-x-auto">
         <table className="table">
           {/* head */}
           <thead>
-            <tr>
-              <th className="text-black dark:text-white">No</th>
+            <tr
+              className={`  transition duration-1000 ${
+                theme === "dark" ? "text-white " : "text-black"
+              }`}
+            >
+              <th>No</th>
               <th>UserName</th>
               <th>Title & Image</th>
 

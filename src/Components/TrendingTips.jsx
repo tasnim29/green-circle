@@ -1,15 +1,27 @@
 import React, { use } from "react";
+import { AuthContext } from "../Context/AuthContext";
 const tipsPromise = fetch("http://localhost:3000/shareTrendingTip").then(
   (res) => res.json()
 );
 
 const TrendingTips = () => {
+  const { theme } = use(AuthContext);
   const trendingTips = use(tipsPromise);
   console.log(trendingTips);
   return (
-    <div className="my-20 py-16 bg-green-50 dark:bg-black">
+    <div
+      className={`my-20 py-16  ${
+        theme === "dark" ? "bg-gray-950" : "bg-green-50"
+      }`}
+    >
       <div className="text-center mb-12">
-        <h2 className="text-4xl font-bold text-green-800">Top Trending Tips</h2>
+        <h2
+          className={`text-4xl font-bold text-center mb-8 transition duration-1000 ${
+            theme === "dark" ? "text-white " : "text-green-700"
+          }`}
+        >
+          Top Trending Tips
+        </h2>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto">

@@ -3,7 +3,7 @@ import { AuthContext } from "../Context/AuthContext";
 import Swal from "sweetalert2";
 
 const ShareGardenTip = () => {
-  const { user } = use(AuthContext);
+  const { user, theme } = use(AuthContext);
   const handleShareTip = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -35,13 +35,25 @@ const ShareGardenTip = () => {
       });
   };
   return (
-    <div className="bg-green-50  py-10 ">
-      <div className="my-20 max-w-5xl mx-auto bg-green-50 ">
+    <div
+      className={` py-10 transition duration-1000 ${
+        theme === "dark" ? "bg-gray-950 " : "bg-green-50"
+      }`}
+    >
+      <div className="my-20 max-w-5xl mx-auto ">
         <div className="text-center mb-10">
-          <h1 className="text-4xl font-bold text-green-700">
+          <h1
+            className={`text-4xl font-bold text-center mb-8 transition duration-1000 ${
+              theme === "dark" ? "text-white " : "text-green-700"
+            }`}
+          >
             🌱 Share a Garden Tip
           </h1>
-          <p className="text-lg text-green-900 mt-3">
+          <p
+            className={`text-lg font-semibold text-center  transition duration-1000 ${
+              theme === "dark" ? "text-gray-400 " : "text-green-700"
+            }`}
+          >
             Grow your knowledge! Share your green thumb secrets with fellow
             garden lovers.
           </p>
@@ -98,7 +110,11 @@ const ShareGardenTip = () => {
               </label>
               <select
                 name="difficulty"
-                className="select select-bordered w-full"
+                className={`select select-bordered w-full ${
+                  theme === "dark"
+                    ? "bg-gray-800 text-white border-gray-600"
+                    : "bg-green-50 text-green-900 border-green-500"
+                }`}
               >
                 <option value="" disabled>
                   Select difficulty
@@ -123,7 +139,14 @@ const ShareGardenTip = () => {
               <label className="label text-xl font-semibold text-green-900">
                 Category
               </label>
-              <select name="category" className="select select-bordered w-full">
+              <select
+                name="category"
+                className={`select select-bordered w-full ${
+                  theme === "dark"
+                    ? "bg-gray-800 text-white border-gray-600"
+                    : "bg-green-50 text-green-900 border-green-500"
+                }`}
+              >
                 <option value="" disabled>
                   Select Category
                 </option>
@@ -138,7 +161,11 @@ const ShareGardenTip = () => {
               </label>
               <select
                 name="availability"
-                className="select select-bordered w-full"
+                className={`select select-bordered w-full ${
+                  theme === "dark"
+                    ? "bg-gray-800 text-white border-gray-600"
+                    : "bg-green-50 text-green-900 border-green-500"
+                }`}
               >
                 <option value="" disabled>
                   Select Availability
@@ -159,7 +186,7 @@ const ShareGardenTip = () => {
               placeholder="Enter Images url"
             />
           </fieldset>
-          <button className="bg-green-700 text-white w-full py-2 mt-5 cursor-pointer hover:bg-green-800">
+          <button className="bg-green-700 text-white w-full py-2 mt-5 cursor-pointer hover:bg-green-800 rounded-lg">
             Share Tip
           </button>
         </form>

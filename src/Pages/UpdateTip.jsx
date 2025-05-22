@@ -15,7 +15,7 @@ const UpdateTip = () => {
     availability,
     image,
   } = tip;
-  const { user } = use(AuthContext);
+  const { user, theme } = use(AuthContext);
 
   const handleUpdate = (e) => {
     e.preventDefault();
@@ -47,10 +47,18 @@ const UpdateTip = () => {
       });
   };
   return (
-    <div className="bg-green-50  py-10 ">
-      <div className="my-20 max-w-5xl mx-auto bg-green-50 ">
+    <div
+      className={` py-10 transition duration-1000 ${
+        theme === "dark" ? "bg-gray-950" : "bg-green-50"
+      }`}
+    >
+      <div className="my-20 max-w-5xl mx-auto  ">
         <div className="text-center mb-10">
-          <h1 className="text-4xl font-bold text-green-700">
+          <h1
+            className={`text-4xl font-bold text-center mb-8 transition duration-1000 ${
+              theme === "dark" ? "text-white " : "text-green-700"
+            }`}
+          >
             🌱 You can Update your Garden Tip
           </h1>
         </div>
@@ -108,7 +116,11 @@ const UpdateTip = () => {
               </label>
               <select
                 name="difficulty"
-                className="select select-bordered w-full"
+                className={`select select-bordered w-full ${
+                  theme === "dark"
+                    ? "bg-gray-800 text-white border-gray-600"
+                    : "bg-green-50 text-green-900 border-green-500"
+                }`}
                 defaultValue={difficulty}
               >
                 <option value="" disabled>
@@ -137,7 +149,11 @@ const UpdateTip = () => {
               </label>
               <select
                 name="category"
-                className="select select-bordered w-full"
+                className={`select select-bordered w-full ${
+                  theme === "dark"
+                    ? "bg-gray-800 text-white border-gray-600"
+                    : "bg-green-50 text-green-900 border-green-500"
+                }`}
                 defaultValue={category}
               >
                 <option value="" disabled>
@@ -154,7 +170,11 @@ const UpdateTip = () => {
               </label>
               <select
                 name="availability"
-                className="select select-bordered w-full"
+                className={`select select-bordered w-full ${
+                  theme === "dark"
+                    ? "bg-gray-800 text-white border-gray-600"
+                    : "bg-green-50 text-green-900 border-green-500"
+                }`}
                 defaultValue={availability}
               >
                 <option value="" disabled>
@@ -177,7 +197,7 @@ const UpdateTip = () => {
               placeholder="Enter Images url"
             />
           </fieldset>
-          <button className="bg-green-700 text-white w-full py-2 mt-5 cursor-pointer hover:bg-green-800">
+          <button className="bg-green-700 text-white w-full py-2 mt-5 cursor-pointer hover:bg-green-800 rounded-lg">
             Update Tip
           </button>
         </form>

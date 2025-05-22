@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { use, useState } from "react";
 import { MdBrowserUpdated, MdDeleteForever } from "react-icons/md";
 import { Link, useLoaderData } from "react-router";
 import Swal from "sweetalert2";
+import { AuthContext } from "../Context/AuthContext";
 
 const MyTips = () => {
+  const { theme } = use(AuthContext);
   const initialTips = useLoaderData();
   const [allTips, setAllTips] = useState(initialTips);
 
@@ -57,14 +59,22 @@ const MyTips = () => {
 
   return (
     <div className="max-w-5xl mx-auto my-20">
-      <h2 className="text-3xl font-bold text-green-900 text-center mb-4">
-        All the Tips
-      </h2>
+      <h1
+        className={`text-4xl font-bold text-center mb-8 transition duration-1000 ${
+          theme === "dark" ? "text-white " : "text-green-700"
+        }`}
+      >
+        🌱 All Your Tips
+      </h1>
       <div className="overflow-x-auto">
         <table className="table">
           {/* head */}
           <thead>
-            <tr>
+            <tr
+              className={`  transition duration-1000 ${
+                theme === "dark" ? "text-white " : "text-black"
+              }`}
+            >
               <th>No</th>
               <th>UserName</th>
               <th>Title</th>
