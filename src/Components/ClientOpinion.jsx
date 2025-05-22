@@ -2,6 +2,7 @@ import React, { use } from "react";
 import { AuthContext } from "../Context/AuthContext";
 import quoteIcon from "../assets/qouteIcon.jpg";
 import { CiStar } from "react-icons/ci";
+import { Typewriter } from "react-simple-typewriter";
 
 const clientsPromise = fetch("/Clients.json").then((res) => res.json());
 
@@ -16,7 +17,15 @@ const ClientOpinion = () => {
           theme === "dark" ? "text-white " : "text-green-700"
         }`}
       >
-        ✅ What Our Clients Say
+        <Typewriter
+          words={["  ✅ What Our Clients Say"]}
+          loop={false}
+          cursor
+          cursorStyle="|"
+          typeSpeed={60}
+          deleteSpeed={50}
+          delaySpeed
+        ></Typewriter>
       </h1>
 
       <section className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-8">
