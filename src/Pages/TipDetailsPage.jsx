@@ -82,7 +82,7 @@ const TipDetailsPage = () => {
           {/* Like Button */}
           <button
             onClick={() => handleLike(_id)}
-            className="flex items-center gap-2 px-4 py-2 text-white bg-green-600 hover:bg-green-700 rounded-full w-max cursor-pointer"
+            className="flex items-center gap-2 px-4 py-2 text-white bg-green-600 hover:bg-green-700 hover:scale-105 rounded-full w-max cursor-pointer"
           >
             <SlLike size={20} /> Like
           </button>

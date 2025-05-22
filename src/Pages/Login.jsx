@@ -1,12 +1,17 @@
-import React, { use } from "react";
+import React, { use, useState } from "react";
 import { FcGoogle } from "react-icons/fc";
-import { Link, useNavigate } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../Context/AuthContext";
 import { toast, ToastContainer } from "react-toastify";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Login = () => {
   const navigation = useNavigate();
   const { userLogin, googleLogin, setUser } = use(AuthContext);
+  // passwordShow toggle
+  const [showPassword, setShowPassword] = useState(false);
+  const location = useLocation();
+  // console.log(location);
   const handleLogin = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -23,7 +28,10 @@ const Login = () => {
         console.log(user);
         setUser(user);
         toast.success("Successfully Signed in");
-        setTimeout(() => navigation("/"), 1500);
+        setTimeout(
+          () => navigation(`${location.state ? location.state : "/"}`),
+          1500
+        );
       })
       .catch((error) => {
         const errorMessage = error.message;
@@ -38,7 +46,10 @@ const Login = () => {
         console.log(user);
         setUser(user);
         toast.success("Successfully Signed in");
-        setTimeout(() => navigation("/"), 1500);
+        setTimeout(
+          () => navigation(`${location.state ? location.state : "/"}`),
+          1500
+        );
       })
       .catch((error) => {
         const errorMessage = error.message;
@@ -74,8 +85,8 @@ const Login = () => {
               className="w-full px-3 py-2 border border-green-300 rounded-md bg-green-100 placeholder-green-600 focus:outline-none focus:ring-2 focus:ring-green-400 text-sm sm:text-base"
             />
           </div>
-
-          <div>
+          {/* password */}
+          <div className="relative">
             <label
               htmlFor="password"
               className="block mb-1 text-sm text-green-800"
@@ -83,12 +94,18 @@ const Login = () => {
               Password
             </label>
             <input
-              type="password"
+              type={showPassword ? "text" : "password"}
               name="password"
               id="password"
               placeholder="*****"
               className="w-full px-3 py-2 border border-green-300 rounded-md bg-green-100 placeholder-green-600 focus:outline-none focus:ring-2 focus:ring-green-400 text-sm sm:text-base"
             />
+            <span
+              onClick={() => setShowPassword(!showPassword)}
+              className="absolute right-4 top-8 cursor-pointer"
+            >
+              {showPassword ? <FaEyeSlash size={24} /> : <FaEye size={24} />}
+            </span>
           </div>
         </div>
 

@@ -5,7 +5,7 @@ import { AuthContext } from "../Context/AuthContext";
 const BrowseTips = () => {
   const { theme } = use(AuthContext);
   const tips = useLoaderData();
-  console.log(tips);
+
   const [selectedDiff, setSelectedDiff] = useState("");
   // console.log(tips);
   const handleOnchange = (e) => {
