@@ -11,7 +11,7 @@ const BrowseTips = () => {
           {/* head */}
           <thead>
             <tr>
-              <th>No</th>
+              <th className="text-black dark:text-white">No</th>
               <th>UserName</th>
               <th>Title & Image</th>
 

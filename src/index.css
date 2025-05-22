@@ -2,13 +2,14 @@
 @plugin "daisyui";
 @import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap");
 
-body {
-  color: black;
-}
-
 html.dark body {
   color: white;
-  background-color: black;
+  @apply bg-gray-950;
+  transition: 1s;
+}
+html.light body {
+  @apply bg-white;
+  transition: 1s;
 }
 
 .merriweather {
