@@ -1,20 +1,31 @@
 import React, { use, useState } from "react";
 import { Link, useLoaderData } from "react-router";
 import { AuthContext } from "../Context/AuthContext";
+import { FcSearch } from "react-icons/fc";
 
 const BrowseTips = () => {
   const { theme } = use(AuthContext);
   const tips = useLoaderData();
 
+  const [search, setSearch] = useState("");
   const [selectedDiff, setSelectedDiff] = useState("");
   // console.log(tips);
   const handleOnchange = (e) => {
     setSelectedDiff(e.target.value);
   };
-  const filteredTip =
-    selectedDiff === ""
-      ? tips
-      : tips.filter((Tip) => Tip.difficulty === selectedDiff);
+  // const filteredTip =
+  //   selectedDiff === ""
+  //     ? tips
+  //     : tips.filter((Tip) => Tip.difficulty === selectedDiff);
+
+  const filteredTip = tips.filter((tip) => {
+    const matchedDifficulty =
+      selectedDiff === "" || tip.difficulty === selectedDiff;
+    const matchedSearch =
+      search === "" || tip.title.toLowerCase().includes(search.toLowerCase());
+
+    return matchedDifficulty && matchedSearch;
+  });
 
   return (
     <div className="max-w-5xl mx-auto my-20">
@@ -25,13 +36,28 @@ const BrowseTips = () => {
       >
         🌱 Tips From Users
       </h1>
-      {/* Dropdown  */}
-      <div className="flex justify-end mb-4">
+
+      {/* search menu */}
+      <div className="relative flex flex-col md:flex-row justify-between items-center gap-4 mb-6">
+        <div className="flex items-center gap-2 w-full md:w-72 bg-white rounded-lg shadow-sm px-3 py-2 border border-green-300">
+          <FcSearch size={20} className="text-gray-500" />
+          <input
+            className={`w-full bg-transparent focus:outline-none text-sm ${
+              theme === "dark" ? "text-black" : "text-green-900"
+            }`}
+            type="search"
+            name="search"
+            placeholder="Search by title"
+            onChange={(e) => setSearch(e.target.value)}
+          />
+        </div>
+
+        {/* dropdown menu */}
         <select
           defaultValue={""}
           onChange={handleOnchange}
           name="difficulty"
-          className={`select select-bordered w-52 ${
+          className={`select select-bordered w-full md:w-52 ${
             theme === "dark"
               ? "bg-gray-800 text-white border-gray-600"
               : "bg-green-50 text-green-900 border-green-500"
@@ -56,7 +82,7 @@ const BrowseTips = () => {
               }`}
             >
               <th>No</th>
-              <th>UserName</th>
+              <th>User</th>
               <th>Title & Image</th>
 
               <th>Category</th>
