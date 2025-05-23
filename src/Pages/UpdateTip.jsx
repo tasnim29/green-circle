@@ -25,7 +25,7 @@ const UpdateTip = () => {
     // console.log(updatedTip);
 
     // update mongodb
-    fetch(`http://localhost:3000/shareTip/${_id}`, {
+    fetch(`https://assignment-10-server-five-iota.vercel.app/shareTip/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

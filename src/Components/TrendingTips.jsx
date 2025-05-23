@@ -9,7 +9,7 @@ const TrendingTips = () => {
   const [trendingTips, setTrendingTips] = useState([]);
   // console.log(trendingTips);
   useEffect(() => {
-    fetch("http://localhost:3000/shareTrendingTip")
+    fetch("https://assignment-10-server-five-iota.vercel.app/shareTrendingTip")
       .then((res) => res.json())
       .then((data) => setTrendingTips(data));
   }, []);

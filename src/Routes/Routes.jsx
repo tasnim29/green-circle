@@ -23,7 +23,8 @@ export const router = createBrowserRouter([
       {
         index: true,
         hydrateFallbackElement: <Loader></Loader>,
-        loader: () => fetch("http://localhost:3000/activeG"),
+        loader: () =>
+          fetch("https://assignment-10-server-five-iota.vercel.app/activeG"),
         Component: Home,
       },
       {
@@ -45,14 +46,17 @@ export const router = createBrowserRouter([
       {
         path: "/browseTips",
         hydrateFallbackElement: <Loader></Loader>,
-        loader: () => fetch("http://localhost:3000/shareTip"),
+        loader: () =>
+          fetch("https://assignment-10-server-five-iota.vercel.app/shareTip"),
         Component: BrowseTips,
       },
       {
         path: "/tipDetails/:id",
         hydrateFallbackElement: <Loader></Loader>,
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/shareTip/${params.id}`),
+          fetch(
+            `https://assignment-10-server-five-iota.vercel.app/shareTip/${params.id}`
+          ),
         element: (
           <PrivateRoutes>
             <TipDetailsPage></TipDetailsPage>
@@ -63,7 +67,9 @@ export const router = createBrowserRouter([
         path: "/myTips/:email",
         hydrateFallbackElement: <Loader></Loader>,
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/shareTipAll/${params.email}`),
+          fetch(
+            `https://assignment-10-server-five-iota.vercel.app/shareTipAll/${params.email}`
+          ),
         element: (
           <PrivateRoutes>
             <MyTips></MyTips>
@@ -74,7 +80,9 @@ export const router = createBrowserRouter([
         path: "/updateTip/:id",
         hydrateFallbackElement: <Loader></Loader>,
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/shareTip/${params.id}`),
+          fetch(
+            `https://assignment-10-server-five-iota.vercel.app/shareTip/${params.id}`
+          ),
         element: (
           <PrivateRoutes>
             <UpdateTip></UpdateTip>
@@ -84,7 +92,10 @@ export const router = createBrowserRouter([
       {
         path: "/exploreGardeners",
         hydrateFallbackElement: <Loader></Loader>,
-        loader: () => fetch("http://localhost:3000/allGardeners"),
+        loader: () =>
+          fetch(
+            "https://assignment-10-server-five-iota.vercel.app/allGardeners"
+          ),
         Component: ExploreGardeners,
       },
     ],

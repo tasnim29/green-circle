@@ -14,7 +14,7 @@ const ShareGardenTip = () => {
     // newTip.difficulty = parseInt(newTip.difficulty);
 
     //mongodb post
-    fetch("http://localhost:3000/shareTip", {
+    fetch("https://assignment-10-server-five-iota.vercel.app/shareTip", {
       method: "POST",
       headers: {
         "content-type": "application/json",

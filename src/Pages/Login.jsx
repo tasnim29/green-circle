@@ -82,7 +82,9 @@ const Login = () => {
               name="email"
               id="email"
               placeholder="Enter your email address"
-              className="w-full px-3 py-2 border border-green-300 rounded-md bg-green-100 placeholder-green-600 focus:outline-none focus:ring-2 focus:ring-green-400 text-sm sm:text-base "
+              className={`w-full px-3 py-2 border border-green-300 rounded-md bg-green-100 placeholder-green-600 focus:outline-none focus:ring-2 focus:ring-green-400 text-sm sm:text-base ${
+                theme === "dark" && "text-black"
+              }`}
             />
           </div>
           {/* password */}

@@ -30,9 +30,12 @@ const MyTips = () => {
       .then((result) => {
         if (result.isConfirmed) {
           // delete mongodb
-          fetch(`http://localhost:3000/shareTipAll/${id}`, {
-            method: "DELETE",
-          })
+          fetch(
+            `https://assignment-10-server-five-iota.vercel.app/shareTipAll/${id}`,
+            {
+              method: "DELETE",
+            }
+          )
             .then((res) => res.json())
             .then((data) => {
               console.log("after db", data);
