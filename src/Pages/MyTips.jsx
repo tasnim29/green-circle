@@ -5,9 +5,13 @@ import Swal from "sweetalert2";
 import { AuthContext } from "../Context/AuthContext";
 
 const MyTips = () => {
-  const { theme } = use(AuthContext);
+  const { theme, user } = use(AuthContext);
   const initialTips = useLoaderData();
-  const [allTips, setAllTips] = useState(initialTips);
+  // console.log(initialTips);
+  const filteredTipsEmail = initialTips.filter(
+    (tip) => tip.email === user.email
+  );
+  const [allTips, setAllTips] = useState(filteredTipsEmail);
 
   const handleDelete = (id) => {
     const swalWithBootstrapButtons = Swal.mixin({

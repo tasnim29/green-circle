@@ -27,7 +27,7 @@ const Navbar = () => {
       </li>
 
       <li className="font-semibold text-sm text-green-600 bg-white rounded-xl">
-        <NavLink to={`/myTips/${user?.email}`}> My Tips</NavLink>
+        <NavLink to="/myTips"> My Tips</NavLink>
       </li>
     </>
   );

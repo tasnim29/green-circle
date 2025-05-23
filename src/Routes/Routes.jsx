@@ -64,11 +64,11 @@ export const router = createBrowserRouter([
         ),
       },
       {
-        path: "/myTips/:email",
+        path: "/myTips",
         hydrateFallbackElement: <Loader></Loader>,
-        loader: ({ params }) =>
+        loader: () =>
           fetch(
-            `https://assignment-10-server-five-iota.vercel.app/shareTipAll/${params.email}`
+            " https://assignment-10-server-five-iota.vercel.app/shareTipAll"
           ),
         element: (
           <PrivateRoutes>
