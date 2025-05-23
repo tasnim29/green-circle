@@ -7,7 +7,7 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Register = () => {
   const navigation = useNavigate();
-  const { createUser, googleLogin, setUser, updateUserProfile } =
+  const { createUser, googleLogin, setUser, updateUserProfile, theme } =
     use(AuthContext);
   // passwordShow toggle state
   const [showPassword, setShowPassword] = useState(false);
@@ -144,11 +144,15 @@ const Register = () => {
               name="password"
               id="password"
               placeholder="*****"
-              className="w-full px-3 py-2 border border-green-300 rounded-md bg-green-100 placeholder-green-600 focus:outline-none focus:ring-2 focus:ring-green-400 text-sm sm:text-base"
+              className={`w-full px-3 py-2 border border-green-300 rounded-md bg-green-100 placeholder-green-600 focus:outline-none focus:ring-2 focus:ring-green-400 text-sm sm:text-base ${
+                theme === "dark" && "text-black"
+              }`}
             />
             <span
               onClick={() => setShowPassword(!showPassword)}
-              className="absolute right-4 top-8 cursor-pointer"
+              className={`absolute right-4 top-8 cursor-pointer ${
+                theme === "dark" && "text-black"
+              }`}
             >
               {showPassword ? <FaEyeSlash size={24} /> : <FaEye size={24} />}
             </span>

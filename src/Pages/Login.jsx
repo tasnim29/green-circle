@@ -7,7 +7,7 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Login = () => {
   const navigation = useNavigate();
-  const { userLogin, googleLogin, setUser } = use(AuthContext);
+  const { userLogin, googleLogin, setUser, theme } = use(AuthContext);
   // passwordShow toggle
   const [showPassword, setShowPassword] = useState(false);
   const location = useLocation();
@@ -82,7 +82,7 @@ const Login = () => {
               name="email"
               id="email"
               placeholder="Enter your email address"
-              className="w-full px-3 py-2 border border-green-300 rounded-md bg-green-100 placeholder-green-600 focus:outline-none focus:ring-2 focus:ring-green-400 text-sm sm:text-base"
+              className="w-full px-3 py-2 border border-green-300 rounded-md bg-green-100 placeholder-green-600 focus:outline-none focus:ring-2 focus:ring-green-400 text-sm sm:text-base "
             />
           </div>
           {/* password */}
@@ -98,11 +98,15 @@ const Login = () => {
               name="password"
               id="password"
               placeholder="*****"
-              className="w-full px-3 py-2 border border-green-300 rounded-md bg-green-100 placeholder-green-600 focus:outline-none focus:ring-2 focus:ring-green-400 text-sm sm:text-base"
+              className={`w-full px-3 py-2 border border-green-300 rounded-md bg-green-100 placeholder-green-600 focus:outline-none focus:ring-2 focus:ring-green-400 text-sm sm:text-base ${
+                theme === "dark" && "text-black"
+              }`}
             />
             <span
               onClick={() => setShowPassword(!showPassword)}
-              className="absolute right-4 top-8 cursor-pointer"
+              className={`absolute right-4 top-8 cursor-pointer ${
+                theme === "dark" && "text-black"
+              }`}
             >
               {showPassword ? <FaEyeSlash size={24} /> : <FaEye size={24} />}
             </span>

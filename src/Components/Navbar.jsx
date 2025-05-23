@@ -84,7 +84,7 @@ const Navbar = () => {
               <div className="ring-primary ring-offset-base-100 w-9 rounded-full ring-2 ring-offset-2">
                 <img src={user.photoURL} />
               </div>
-              <div
+              {/* <div
                 className={`absolute top-10 left-1/2 -translate-x-1/2 transition-all duration-300 
               ${
                 showLogout
@@ -94,11 +94,21 @@ const Navbar = () => {
               >
                 <button
                   onClick={handleSignout}
-                  className=" btn btn-lg  bg-green-600 text-white hover:bg-green-700"
+                  className="z-50 btn btn-lg  bg-green-600 text-white hover:bg-green-700"
                 >
                   Sign Out
                 </button>
-              </div>
+              </div> */}
+              {showLogout && (
+                <div className="absolute top-12 left-1/2 -translate-x-1/2 z-50">
+                  <button
+                    onClick={handleSignout}
+                    className="btn btn-sm bg-green-600 text-white hover:bg-green-700 shadow-lg"
+                  >
+                    Sign Out
+                  </button>
+                </div>
+              )}
             </div>
           </div>
         ) : (

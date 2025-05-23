@@ -1,5 +1,5 @@
 import React from "react";
-
+import background from "../assets/background.avif";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
@@ -40,49 +40,73 @@ const events = [
 
 const Banner = () => {
   return (
-    <div className="mt-10 max-w-5xl mx-auto">
-      <Swiper
-        effect={"coverflow"}
-        grabCursor={true}
-        centeredSlides={true}
-        slidesPerView={"auto"}
-        coverflowEffect={{
-          rotate: 50,
-          stretch: 0,
-          depth: 100,
-          modifier: 1,
-          slideShadows: true,
+    <div className="relative h-[600px] overflow-hidden">
+      {/* Background Image */}
+      <div
+        className="absolute inset-0 z-0 bg-center bg-cover"
+        style={{
+          backgroundImage: `url(${background})`,
+          filter: "brightness(0.3)",
         }}
-        pagination={true}
-        modules={[EffectCoverflow, Pagination]}
-        className="mySwiper"
-      >
-        {events.map((event) => (
-          <SwiperSlide key={event.id} style={{ width: "300px" }}>
-            <div
-              style={{
-                backgroundImage: `url(${event.image})`,
-                width: "300px",
-                height: "400px",
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                borderRadius: "12px",
-                boxShadow: "0 4px 8px rgba(0,0,0,0.2)",
-                position: "relative",
-                color: "white",
-              }}
-            >
-              <div
-                className="absolute bottom-2 left-2  p-2 rounded-md text-white"
-                style={{ backgroundColor: "rgba(0, 0, 0, 0.7)" }}
-              >
-                <h3>{event.title}</h3>
-                <p>{event.date}</p>
-              </div>
-            </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+      ></div>
+
+      <div className="absolute inset-0 z-10 flex flex-col items-center justify-center text-center text-white px-4">
+        <h1 className="text-2xl md:text-5xl font-bold mb-4">
+          A Gardening Community & Resource Hub
+        </h1>
+        <p className="max-w-2xl text-sm mb-6">
+          A platform for gardening enthusiasts to share tips, find local
+          gardeners, ask plant care questions, post or join gardening events,
+          and connect over shared interests like composting, hydroponics,
+          balcony gardens, etc.
+        </p>
+
+        <div className="w-full flex justify-center">
+          <Swiper
+            effect="coverflow"
+            grabCursor={true}
+            centeredSlides={true}
+            slidesPerView="auto"
+            coverflowEffect={{
+              rotate: 50,
+              stretch: 0,
+              depth: 100,
+              modifier: 1,
+              slideShadows: true,
+            }}
+            pagination={true}
+            modules={[EffectCoverflow, Pagination]}
+            className="mySwiper"
+          >
+            {events.map((event) => (
+              <SwiperSlide key={event.id} style={{ width: "300px" }}>
+                <div
+                  style={{
+                    backgroundImage: `url(${event.image})`,
+                    width: "300px",
+                    height: "400px",
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                    borderRadius: "12px",
+                    boxShadow: "0 4px 8px rgba(0,0,0,0.2)",
+                    position: "relative",
+                    color: "white",
+                    border: "4px solid yellow",
+                  }}
+                >
+                  <div
+                    className="absolute bottom-2 left-2 p-2 rounded-md text-white"
+                    style={{ backgroundColor: "rgba(0, 0, 0, 0.7)" }}
+                  >
+                    <h3 className="font-semibold">{event.title}</h3>
+                    <p className="text-sm">{event.date}</p>
+                  </div>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+      </div>
     </div>
   );
 };

@@ -25,25 +25,27 @@ const BrowseTips = () => {
       >
         🌱 Tips From Users
       </h1>
-      {/* dropdown */}
-      <select
-        defaultValue={""}
-        onChange={handleOnchange}
-        name="difficulty"
-        className={`select select-bordered w-full ${
-          theme === "dark"
-            ? "bg-gray-800 text-white border-gray-600"
-            : "bg-green-50 text-green-900 border-green-500"
-        }`}
-      >
-        <option value="" disabled>
-          Select difficulty
-        </option>
-        <option value="">All</option>
-        <option value="Easy">Easy</option>
-        <option value="Medium">Medium</option>
-        <option value="Hard">Hard</option>
-      </select>
+      {/* Dropdown  */}
+      <div className="flex justify-end mb-4">
+        <select
+          defaultValue={""}
+          onChange={handleOnchange}
+          name="difficulty"
+          className={`select select-bordered w-52 ${
+            theme === "dark"
+              ? "bg-gray-800 text-white border-gray-600"
+              : "bg-green-50 text-green-900 border-green-500"
+          }`}
+        >
+          <option value="" disabled>
+            Select difficulty
+          </option>
+          <option value="">All</option>
+          <option value="Easy">Easy</option>
+          <option value="Medium">Medium</option>
+          <option value="Hard">Hard</option>
+        </select>
+      </div>
       <div className="overflow-x-auto">
         <table className="table">
           {/* head */}
