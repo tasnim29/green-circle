@@ -100,6 +100,7 @@ const Banner = () => {
                   >
                     <h3 className="font-semibold">{event.title}</h3>
                     <p className="text-sm">{event.date}</p>
+                    <button className="btn btn-secondary">View More</button>
                   </div>
                 </div>
               </SwiperSlide>
