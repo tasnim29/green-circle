@@ -2,6 +2,7 @@ import React, { use, useState } from "react";
 import { Link, useLoaderData } from "react-router";
 import { AuthContext } from "../Context/AuthContext";
 import { FcSearch } from "react-icons/fc";
+import Loader from "../Components/Loader";
 
 const BrowseTips = () => {
   const { theme } = use(AuthContext);
@@ -10,6 +11,11 @@ const BrowseTips = () => {
   const [search, setSearch] = useState("");
   const [selectedDiff, setSelectedDiff] = useState("");
   // console.log(tips);
+  const [load, setLoad] = useState(true);
+  setTimeout(() => {
+    setLoad(false);
+  }, 300);
+  if (load) return <Loader></Loader>;
   const handleOnchange = (e) => {
     setSelectedDiff(e.target.value);
   };

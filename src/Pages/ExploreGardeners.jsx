@@ -1,12 +1,18 @@
-import React, { use } from "react";
+import React, { use, useState } from "react";
 import { useLoaderData } from "react-router";
 import ExploreGardenersCard from "../Components/ExploreGardenersCard";
 import { AuthContext } from "../Context/AuthContext";
+import Loader from "../Components/Loader";
 
 const ExploreGardeners = () => {
   const { theme } = use(AuthContext);
   const allGardeners = useLoaderData();
   // console.log(allGardeners);
+  const [load, setLoad] = useState(true);
+  setTimeout(() => {
+    setLoad(false);
+  }, 300);
+  if (load) return <Loader></Loader>;
   return (
     <div
       className={` py-10 transition duration-1000 ${

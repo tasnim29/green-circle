@@ -8,6 +8,7 @@ const MyTips = () => {
   const { theme, user } = use(AuthContext);
   const initialTips = useLoaderData();
   // console.log(initialTips);
+
   const filteredTipsEmail = initialTips.filter(
     (tip) => tip.email === user.email
   );
