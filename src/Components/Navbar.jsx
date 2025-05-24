@@ -112,7 +112,7 @@ const Navbar = () => {
             </div>
           </div>
         ) : (
-          <div>
+          <div className="space-x-3">
             <Link
               to="/login"
               className="btn btn-sm bg-green-600 text-white hover:bg-green-700"
