@@ -1,32 +1,73 @@
-# React + Vite
+# 🌿 Green-Circle - Gardening Community & Resource Hub
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to **Green-Circle**, a full-stack web application designed for gardening enthusiasts to explore, learn, share, and connect. This community-driven platform allows users to share tips, join gardening events, discover experienced gardeners, and get help for all their plant-care needs.
 
-Currently, two official plugins are available:
+![Green_circle Banner](https://i.ibb.co/xmRTMZx/echojournal-screenshot.jpg) <!-- Replace with your actual deployed screenshot URL -->
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🔗 Live Website
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+🌐 [Green-Circle Live Site](https://Green-Circle-client.netlify.app)
 
-/-----------------------/
-/-----------------------/
+---
 
-About my Project:
-(1)Project Name : Green Circle
+## 🚀 Technologies Used
 
-(2)Generated Live Site URL :https://assignment-10-client-4fb64.web.app
+### 🖥️ Frontend
 
-(3)5+ bullet points feature of my project:
---My project has an user friendly and extremely attractive home page
---smooth authentication system
---a form which users can add tips about gardening
---in my tips page, users can see their own tips that they have shared
---they can also see other's tips which are public
---They can also see the Gardeners who shared tips
---users can give like to the tips
+- React.js
+- React Router DOM
+- Axios
+- Tailwind CSS + DaisyUI
+- Firebase Authentication
+- React Hook Form
+- Swiper.js
+- Lottie React
+- React Toastify / SweetAlert
 
-(4)Project description :
-This Gardening Community & Resource Hub is a full-stack web application designed for plant enthusiasts to share tips, connect with local gardeners, and explore gardening events. Users can register or log in via email or Google, then add, browse, update, or delete gardening tips. The platform features a dynamic banner for events, showcases top active gardeners, and displays trending gardening tips. It includes protected routes for managing personalized content and uses MongoDB for data storage. Built with React, Firebase, Express, and MongoDB, it provides an engaging, interactive gardening experience.
+### ⚙️ Backend
+
+- Node.js
+- Express.js
+- MongoDB
+- CORS
+- Dotenv
+- JWT
+
+---
+
+## 🧩 Key Features
+
+- 🔐 Authentication with Firebase (Email/Password & Google Login)
+- 🌱 Add, Update, Delete Gardening Tips (Private Routes with Firebase Auth)
+- 📊 Tips Table with Filtering by Difficulty (Easy/Medium/Hard)
+- 🏆 Top Trending Tips section with Like count update functionality
+- 🧑‍🌾 Featured Gardeners showcase
+- 🕵️ Explore Gardeners page with total shared tips
+- 💡 Dark/Light Theme toggle (with context/state preservation)
+- 🧭 Fully Responsive (Mobile + Desktop)
+- 🧭 Reload & Private Route State Preservation
+- 🚫 Custom 404 Page
+- 🌀 Loading Spinner for data fetching
+
+---
+
+## 📦 Dependencies
+
+### Client
+
+```bash
+"axios"
+"react-router-dom"
+"firebase"
+"react-hook-form"
+"swiper"
+"lottie-react"
+"react-toastify"
+"daisyui"
+"tailwindcss"
+"react-icons"
+"react-tooltip"
+"react-awesome-reveal"
+```
