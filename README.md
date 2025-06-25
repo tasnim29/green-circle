@@ -74,8 +74,55 @@ Welcome to **Green-Circle**, a full-stack web application designed for gardening
 
 ### Server
 
+```bash
+
 "express"
 "cors"
 "dotenv"
 "mongodb"
 "jsonwebtoken"
+```
+
+---
+
+🛠️ How to Run This Project Locally
+
+### 1. Clone the Repositories
+
+```
+git clone https://github.com/yourusername/echojournal-client.git
+git clone https://github.com/yourusername/echojournal-server.git
+```
+
+### 2. Set Up the Client
+
+```
+cd echojournal-client
+npm install
+```
+
+🔑 Environment Variables (Create .env file)
+
+```
+VITE_API_URL=https://your-server.vercel.app
+VITE_FIREBASE_API_KEY=your_key
+VITE_FIREBASE_AUTH_DOMAIN=your_project.firebaseapp.com
+# Add all Firebase ENV keys
+```
+
+### 3. Set Up the Server
+
+```
+cd echojournal-server
+npm install
+```
+
+🔑 Environment Variables (Create .env file)
+
+```
+PORT=5000
+MONGODB_URI=your_mongodb_uri
+JWT_SECRET=your_secret
+```
+
+### 4. Run the Client and Server
