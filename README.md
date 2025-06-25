@@ -85,7 +85,7 @@ Welcome to **Green-Circle**, a full-stack web application designed for gardening
 
 ---
 
-🛠️ How to Run This Project Locally
+## 🛠️ How to Run This Project Locally
 
 ### 1. Clone the Repositories
 
@@ -126,3 +126,15 @@ JWT_SECRET=your_secret
 ```
 
 ### 4. Run the Client and Server
+
+```
+Client:npm run dev
+server:nodemon index.js
+
+```
+
+---
+
+## 🔗 Relevant Links
+
+### 🔥 Firebase Docs: https://firebase.google.com/docs
