@@ -2,13 +2,13 @@
 
 Welcome to **Green-Circle**, a full-stack web application designed for gardening enthusiasts to explore, learn, share, and connect. This community-driven platform allows users to share tips, join gardening events, discover experienced gardeners, and get help for all their plant-care needs.
 
-![Green_circle Banner](https://i.ibb.co/xmRTMZx/echojournal-screenshot.jpg) <!-- Replace with your actual deployed screenshot URL -->
+![Green_circle Banner](https://i.ibb.co/n8ZwHCNS/garden.png) <!-- Replace with your actual deployed screenshot URL -->
 
 ---
 
 ## 🔗 Live Website
 
-🌐 [Green-Circle Live Site](https://Green-Circle-client.netlify.app)
+🌐 [Green-Circle Live Site](https://assignment-10-client-4fb64.web.app/)
 
 ---
 
@@ -71,3 +71,11 @@ Welcome to **Green-Circle**, a full-stack web application designed for gardening
 "react-tooltip"
 "react-awesome-reveal"
 ```
+
+### Server
+
+"express"
+"cors"
+"dotenv"
+"mongodb"
+"jsonwebtoken"
