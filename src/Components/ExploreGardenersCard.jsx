@@ -5,7 +5,7 @@ const ExploreGardenersCard = ({ gardener }) => {
   const { name, age, gender, status, experience, image, info, sharedTips } =
     gardener;
   return (
-    <div className="relative pt-12 max-w-sm mx-auto rounded-2xl overflow-hidden shadow-lg bg-gradient-to-br from-green-100 via-green-50 to-white border border-green-200 transition-transform hover:scale-105 duration-300">
+    <div className="relative pt-12  rounded-2xl overflow-hidden shadow-lg bg-gradient-to-br from-green-100 via-green-50 to-white border border-green-200 transition-transform hover:scale-105 duration-300">
       <figure className="flex justify-center -mt-10">
         <img
           src={image}

@@ -1,5 +1,7 @@
 {
   "projects": {
-    "default": "assignment-10-client-4fb64"
-  }
+    "default": "green-circle-client"
+  },
+  "targets": {},
+  "etags": {}
 }

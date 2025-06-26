@@ -6,14 +6,17 @@ import DashNav from "../Pages/DashBoard/DashNav";
 import DarkMode from "../Components/DarkMode";
 
 const DashBoardLayout = () => {
-  const { user, theme } = use(AuthContext);
+  const { user, theme, signOutUser } = use(AuthContext);
+  const handleLogout = () => {
+    signOutUser();
+  };
   return (
     <div className="drawer lg:drawer-open">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content flex flex-col ">
         {/* Page content here */}
         <div
-          className={`navbar   w-full justify-between  shadow-sm ${
+          className={`navbar lg:px-24  w-full justify-between  shadow-sm ${
             theme === "dark" ? "bg-gray-950" : "bg-base-300 lg:bg-white"
           }`}
         >
@@ -37,9 +40,16 @@ const DashBoardLayout = () => {
                 ></path>
               </svg>
             </label>
-            <span className="text-lg font-bold text-green-800 lg:hidden">
-              Dashboard
-            </span>
+            <div className="flex flex-col">
+              <h1
+                className={`text-xl font-bold ${
+                  theme === "dark" ? "text-base-200" : "text-primary "
+                }`}
+              >
+                Welcome {user.displayName} 👋👋
+              </h1>
+              <p>Here's what's happening with the website</p>
+            </div>
           </div>
 
           {/* Right: Avatar */}
@@ -77,6 +87,15 @@ const DashBoardLayout = () => {
                 <NavLink to="/dashBoard/myTips"> My Tips</NavLink>
               </li>
             )}
+          </div>
+          {/* logout button */}
+          <div className="mt-auto">
+            <button
+              onClick={handleLogout}
+              className="btn btn-accent w-full text-white font-semibold"
+            >
+              Logout
+            </button>
           </div>
         </ul>
       </div>
