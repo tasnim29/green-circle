@@ -52,7 +52,7 @@ const Banner = () => {
 
       <div className="absolute inset-0 z-10 flex flex-col items-center justify-center text-center text-white px-4">
         <h1 className="text-2xl md:text-5xl font-bold mb-4">
-          A Gardening Community & Resource Hub
+          Gardening Community & Resource Hub
         </h1>
         <p className="max-w-2xl text-sm mb-6">
           A platform for gardening enthusiasts to share tips, find local
