@@ -6,11 +6,11 @@ import Footer from "../Components/Footer";
 
 const MainLayout = () => {
   return (
-    <div className="merriweather">
+    <div className="libre-baskerville">
       <header>
         <Navbar></Navbar>
       </header>
-      <main className=" min-h-[calc(100vh-384px)]">
+      <main className="pt-24 min-h-[calc(100vh-384px)]">
         <Outlet></Outlet>
       </main>
       <footer>

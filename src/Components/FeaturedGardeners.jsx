@@ -8,7 +8,7 @@ const FeaturedGardeners = () => {
   const gardenersProfile = useLoaderData();
 
   return (
-    <div className="mt-20 max-w-6xl mx-auto ">
+    <div className="mt-20 max-w-7xl mx-auto ">
       <h1
         className={`text-4xl font-bold text-center mb-8 transition duration-1000 ${
           theme === "dark" ? "text-white " : "text-green-700"

@@ -1,13 +1,14 @@
 import React from "react";
-import logo from "../assets/gardenLogo.jpg";
+
 import { MdEmail } from "react-icons/md";
 import { FaPhone } from "react-icons/fa";
+import Logo from "../Shared/Logo/Logo";
 
 const Footer = () => {
   return (
     <footer className="footer footer-horizontal footer-center bg-green-900 text-primary-content p-10">
       <aside>
-        <img className="w-10 h-10" src={logo} alt="Logo" />
+        <Logo></Logo>
         <p className="font-bold">
           Green Circle LTD.
           <br />

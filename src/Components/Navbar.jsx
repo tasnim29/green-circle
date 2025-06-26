@@ -1,8 +1,9 @@
 import React, { use, useState } from "react";
 import { Link, NavLink } from "react-router";
-import logo from "../assets/gardenLogo.jpg";
+
 import { AuthContext } from "../Context/AuthContext";
 import DarkMode from "./DarkMode";
+import Logo from "../Shared/Logo/Logo";
 
 const Navbar = () => {
   const { user, signOutUser } = use(AuthContext);
@@ -13,122 +14,113 @@ const Navbar = () => {
   };
   const links = (
     <>
-      <li className=" font-semibold text-sm text-green-600 bg-white rounded-xl">
+      <li className="font-semibold text-sm text-base-200 rounded-xl">
         <NavLink to="/">Home</NavLink>
       </li>
-      <li className="font-semibold text-sm text-green-600 bg-white rounded-xl">
+      <li className="font-semibold text-sm text-base-200 rounded-xl">
         <NavLink to="/exploreGardeners">Explore Gardeners</NavLink>
       </li>
-      <li className="font-semibold text-sm text-green-600 bg-white rounded-xl">
+      <li className="font-semibold text-sm text-base-200 rounded-xl">
         <NavLink to="/browseTips">Browse Tips</NavLink>
       </li>
-      <li className="font-semibold text-sm text-green-600 bg-white rounded-xl">
-        <NavLink to="/shareTip"> Share a Garden Tip</NavLink>
-      </li>
-
-      <li className="font-semibold text-sm text-green-600 bg-white rounded-xl">
-        <NavLink to="/myTips"> My Tips</NavLink>
-      </li>
+      {user && (
+        <li className="font-semibold text-sm text-base-200 rounded-xl">
+          <NavLink to="/shareTip"> Share a Garden Tip</NavLink>
+        </li>
+      )}
+      {user && (
+        <li className="font-semibold text-sm text-base-200 rounded-xl">
+          <NavLink to="/myTips"> My Tips</NavLink>
+        </li>
+      )}
     </>
   );
   return (
-    <div className="navbar bg-green-900 shadow-md px-4 lg:px-20">
-      {/* Navbar Start */}
-      <div className="navbar-start">
-        <div className="dropdown">
-          <label tabIndex={0} className="btn btn-ghost lg:hidden text-white">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            </svg>
-          </label>
-          <ul
-            tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-green-100 rounded-box w-52 text-green-900"
-          >
-            {links}
-          </ul>
-        </div>
-        <div className="flex items-center gap-2">
-          <img className="w-10 h-10" src={logo} alt="Logo" />
-          <span className="text-white font-bold text-xl tracking-wide">
-            Green Circle
-          </span>
-        </div>
-      </div>
-
-      {/* Navbar Center */}
-      <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1 space-x-4">{links}</ul>
-      </div>
-
-      {/* Navbar End */}
-      <div className="navbar-end gap-2">
-        {user ? (
-          <div className="space-x-4 ">
-            <div
-              className="avatar tooltip tooltip-left cursor-pointer relative"
-              data-tip={user.displayName}
-              onClick={() => setShowLogout(!showLogout)}
-            >
-              <div className="ring-primary ring-offset-base-100 w-9 rounded-full ring-2 ring-offset-2">
-                <img src={user.photoURL} />
-              </div>
-              {/* <div
-                className={`absolute top-10 left-1/2 -translate-x-1/2 transition-all duration-300 
-              ${
-                showLogout
-                  ? "opacity-100 translate-y-0 visible"
-                  : "opacity-0 -translate-y-2 invisible"
-              }`}
+    <div className="w-full fixed top-0 z-50">
+      <div className="navbar bg-primary shadow-md px-4 lg:px-20 max-w-7xl mx-auto ">
+        {/* Navbar Start */}
+        <div className="navbar-start">
+          <div className="dropdown">
+            <label tabIndex={0} className="btn btn-ghost lg:hidden text-white">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
               >
-                <button
-                  onClick={handleSignout}
-                  className="z-50 btn btn-lg  bg-green-600 text-white hover:bg-green-700"
-                >
-                  Sign Out
-                </button>
-              </div> */}
-              {showLogout && (
-                <div className="absolute top-12 left-1/2 -translate-x-1/2 z-50">
-                  <button
-                    onClick={handleSignout}
-                    className="btn btn-sm bg-green-600 text-white hover:bg-green-700 shadow-lg"
-                  >
-                    Sign Out
-                  </button>
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+            </label>
+            <ul
+              tabIndex={0}
+              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow rounded-box w-52"
+            >
+              {links}
+            </ul>
+          </div>
+          <div className="flex items-center gap-2">
+            <Logo></Logo>
+            <span className="text-base-200 font-bold text-2xl tracking-wide">
+              Green Circle
+            </span>
+          </div>
+        </div>
+
+        {/* Navbar Center */}
+        <div className="navbar-center hidden lg:flex">
+          <ul className="menu menu-horizontal px-1 ">{links}</ul>
+        </div>
+
+        {/* Navbar End */}
+        <div className="navbar-end gap-2">
+          {user ? (
+            <div className="space-x-4 ">
+              <div
+                className="avatar tooltip tooltip-left cursor-pointer relative"
+                data-tip={user.displayName}
+                onClick={() => setShowLogout(!showLogout)}
+              >
+                <div className="ring-primary ring-offset-base-100 w-9 rounded-full ring-2 ring-offset-2">
+                  <img src={user.photoURL} />
                 </div>
-              )}
+
+                {showLogout && (
+                  <div className="absolute top-12 left-1/2 -translate-x-1/2 z-50">
+                    <button
+                      onClick={handleSignout}
+                      className="btn btn-sm bg-green-600 text-white hover:bg-green-700 shadow-lg"
+                    >
+                      Sign Out
+                    </button>
+                  </div>
+                )}
+              </div>
             </div>
+          ) : (
+            <div className="space-x-3">
+              <Link
+                to="/login"
+                className="px-4 py-2 border border-white text-base-200 rounded-md hover:bg-base-200 hover:text-primary hover:border-white transition duration-200"
+              >
+                Sign In
+              </Link>
+              <Link
+                to="/register"
+                className="px-4 py-2 bg-base-200 text-primary border rounded-md transition duration-200"
+              >
+                Sign Up
+              </Link>
+            </div>
+          )}
+          <div>
+            <DarkMode></DarkMode>
           </div>
-        ) : (
-          <div className="space-x-3">
-            <Link
-              to="/login"
-              className="btn btn-sm bg-green-600 text-white hover:bg-green-700"
-            >
-              Sign In
-            </Link>
-            <Link
-              to="/register"
-              className="btn btn-sm bg-white text-green-700 border-green-500 hover:bg-green-100"
-            >
-              Sign Up
-            </Link>
-          </div>
-        )}
-        <div>
-          <DarkMode></DarkMode>
         </div>
       </div>
     </div>
