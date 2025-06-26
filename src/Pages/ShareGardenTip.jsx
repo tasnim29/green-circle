@@ -40,18 +40,18 @@ const ShareGardenTip = () => {
         theme === "dark" ? "bg-gray-950 " : ""
       }`}
     >
-      <div className="max-w-5xl mx-auto ">
+      <div className="">
         <div className="text-center mb-10">
           <h1
             className={`text-4xl font-bold text-center mb-8 transition duration-1000 ${
-              theme === "dark" ? "text-white " : "text-green-700"
+              theme === "dark" ? "text-white " : "text-primary"
             }`}
           >
             🌱 Share a Garden Tip
           </h1>
           <p
             className={`text-lg font-semibold text-center  transition duration-1000 ${
-              theme === "dark" ? "text-gray-400 " : "text-green-700"
+              theme === "dark" ? "text-gray-400 " : "text-primary"
             }`}
           >
             Grow your knowledge! Share your green thumb secrets with fellow
@@ -60,52 +60,52 @@ const ShareGardenTip = () => {
         </div>
         <form onSubmit={handleShareTip}>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-            <fieldset className="fieldset bg-green-200 border-green-400 rounded-box border p-4">
-              <label className="label text-xl font-semibold text-green-900">
+            <fieldset className="fieldset bg-accent border-secondary rounded-box border p-4">
+              <label className="label text-xl font-semibold text-primary">
                 UserName
               </label>
               <input
                 name="username"
                 type="text"
                 value={user.displayName}
-                className="input w-full border-green-500 bg-green-50 text-green-900 placeholder-green-700"
+                className="input w-full border-green-500 bg-green-50 text-primary placeholder-secondary"
               />
             </fieldset>
-            <fieldset className="fieldset bg-green-200 border-green-400 rounded-box border p-4">
-              <label className="label text-xl font-semibold text-green-900">
+            <fieldset className="fieldset bg-accent border-primary rounded-box border p-4">
+              <label className="label text-xl font-semibold text-primary">
                 Email
               </label>
               <input
                 name="email"
                 type="email"
                 value={user.email}
-                className="input w-full border-green-500 bg-green-50 text-green-900 placeholder-green-700"
+                className="input w-full border-green-500 bg-green-50 text-primary placeholder-secondary"
               />
             </fieldset>
-            <fieldset className="fieldset bg-green-200 border-green-400 shadow-md rounded-box border p-4">
-              <label className="label text-xl font-semibold text-green-900">
+            <fieldset className="fieldset bg-accent border-primary shadow-md rounded-box border p-4">
+              <label className="label text-xl font-semibold text-primary">
                 Title
               </label>
               <input
                 name="title"
                 type="text"
-                className="input w-full border-green-500 bg-green-50 text-green-900 placeholder-green-700"
+                className="input w-full border-green-500 bg-green-50 text-primary placeholder-secondary"
                 placeholder="Enter title"
               />
             </fieldset>
-            <fieldset className="fieldset bg-green-200 border-green-400 rounded-box border p-4">
-              <label className="label text-xl font-semibold text-green-900">
+            <fieldset className="fieldset bg-accent border-primary rounded-box border p-4">
+              <label className="label text-xl font-semibold text-primary">
                 Plant Type
               </label>
               <input
                 name="type"
                 type="text"
-                className="input w-full border-green-500 bg-green-50 text-green-900 placeholder-green-700"
+                className="input w-full border-green-500 bg-green-50 text-primary placeholder-secondary"
                 placeholder="Enter Plant Type"
               />
             </fieldset>
-            <fieldset className="fieldset bg-green-200 border-green-400 rounded-box border p-4">
-              <label className="label text-xl font-semibold text-green-900">
+            <fieldset className="fieldset bg-accent border-primary rounded-box border p-4">
+              <label className="label text-xl font-semibold text-primary">
                 Difficulty Level
               </label>
               <select
@@ -113,7 +113,7 @@ const ShareGardenTip = () => {
                 className={`select select-bordered w-full ${
                   theme === "dark"
                     ? "bg-gray-800 text-white border-gray-600"
-                    : "bg-green-50 text-green-900 border-green-500"
+                    : "bg-green-50 text-primary border-green-500"
                 }`}
               >
                 <option value="" disabled>
@@ -124,19 +124,19 @@ const ShareGardenTip = () => {
                 <option value="Hard">Hard</option>
               </select>
             </fieldset>
-            <fieldset className="fieldset bg-green-200 border-green-400 rounded-box border p-4">
-              <label className="label text-xl font-semibold text-green-900">
+            <fieldset className="fieldset bg-accent border-primary rounded-box border p-4">
+              <label className="label text-xl font-semibold text-primary">
                 Description
               </label>
               <input
                 name="description"
                 type="text"
-                className="input w-full border-green-500 bg-green-50 text-green-900 placeholder-green-700"
+                className="input w-full border-green-500 bg-green-50 text-primary placeholder-secondary"
                 placeholder="Enter Description"
               />
             </fieldset>
-            <fieldset className="fieldset bg-green-200 border-green-400 rounded-box border p-4">
-              <label className="label text-xl font-semibold text-green-900">
+            <fieldset className="fieldset bg-accent border-primary rounded-box border p-4">
+              <label className="label text-xl font-semibold text-primary">
                 Category
               </label>
               <select
@@ -144,7 +144,7 @@ const ShareGardenTip = () => {
                 className={`select select-bordered w-full ${
                   theme === "dark"
                     ? "bg-gray-800 text-white border-gray-600"
-                    : "bg-green-50 text-green-900 border-green-500"
+                    : "bg-green-50 text-primary border-green-500"
                 }`}
               >
                 <option value="" disabled>
@@ -155,8 +155,8 @@ const ShareGardenTip = () => {
                 <option value="Vertical-Gardening">Vertical Gardening</option>
               </select>
             </fieldset>
-            <fieldset className="fieldset bg-green-200 border-green-400 rounded-box border p-4">
-              <label className="label text-xl font-semibold text-green-900">
+            <fieldset className="fieldset bg-accent border-primary rounded-box border p-4">
+              <label className="label text-xl font-semibold text-primary">
                 Availability
               </label>
               <select
@@ -164,7 +164,7 @@ const ShareGardenTip = () => {
                 className={`select select-bordered w-full ${
                   theme === "dark"
                     ? "bg-gray-800 text-white border-gray-600"
-                    : "bg-green-50 text-green-900 border-green-500"
+                    : "bg-green-50 text-primary border-green-500"
                 }`}
               >
                 <option value="" disabled>
@@ -175,20 +175,18 @@ const ShareGardenTip = () => {
               </select>
             </fieldset>
           </div>
-          <fieldset className="fieldset bg-green-200 border-green-400 rounded-box border p-4 mt-5">
-            <label className="label text-xl font-semibold text-green-900">
+          <fieldset className="fieldset bg-accent border-primary rounded-box border p-4 mt-5">
+            <label className="label text-xl font-semibold text-primary">
               Images url
             </label>
             <input
               name="image"
               type="text"
-              className="input w-full border-green-500 bg-green-50 text-green-900 placeholder-green-700"
+              className="input w-full border-primary bg-green-50 text-primary placeholder-secondary"
               placeholder="Enter Images url"
             />
           </fieldset>
-          <button className="bg-green-700 text-white w-full py-2 mt-5 cursor-pointer hover:bg-green-800 rounded-lg">
-            Share Tip
-          </button>
+          <button className="btn btn-primary mt-5">Share Tip</button>
         </form>
       </div>
     </div>

@@ -65,10 +65,10 @@ const MyTips = () => {
   };
 
   return (
-    <div className="max-w-5xl mx-auto my-20">
+    <div className="py-10">
       <h1
         className={`text-4xl font-bold text-center mb-8 transition duration-1000 ${
-          theme === "dark" ? "text-white " : "text-green-700"
+          theme === "dark" ? "text-white " : "text-primary"
         }`}
       >
         🌱 All Your Tips
