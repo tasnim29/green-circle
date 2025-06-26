@@ -10,7 +10,7 @@ import Lottie from "lottie-react";
 const LoveAble = () => {
   const { theme } = use(AuthContext);
   return (
-    <div className="max-w-6xl mx-auto my-20">
+    <div className="max-w-7xl mx-auto my-20">
       <h1
         className={`text-4xl font-bold text-center mb-8 transition duration-1000 ${
           theme === "dark" ? "text-white " : "text-primary"
@@ -49,7 +49,11 @@ const LoveAble = () => {
             <Lottie animationData={myAnimation} loop={true} />
           </div>
           <div className="flex flex-col md:flex-row gap-8 items-center justify-center">
-            <div className="cursor-pointer shadow-lg  hover:bg-gray-300 bg-white p-5 text-center space-y-2 rounded-xl">
+            <div
+              className={`cursor-pointer shadow-lg hover:bg-gray-300 bg-white p-5 text-center space-y-2 rounded-xl ${
+                theme === "dark" ? "border-3 border-yellow-500" : ""
+              }`}
+            >
               <h2 className="text-3xl font-bold text-[#176AE5]">
                 <CountUp end={95} duration={40} suffix="%" />
               </h2>
@@ -61,7 +65,11 @@ const LoveAble = () => {
                 Plant Care Success Rate
               </p>
             </div>
-            <div className="cursor-pointer shadow-lg  hover:bg-gray-300 bg-white p-5 text-center space-y-2 rounded-xl">
+            <div
+              className={`cursor-pointer shadow-lg hover:bg-gray-300 bg-white p-5 text-center space-y-2 rounded-xl ${
+                theme === "dark" ? "border-3 border-yellow-500" : ""
+              }`}
+            >
               <h2 className="text-3xl font-bold text-[#176AE5]">
                 <CountUp end={600} duration={20} suffix="+" />
               </h2>

@@ -14,6 +14,8 @@ import UpdateTip from "../Pages/UpdateTip";
 import ExploreGardeners from "../Pages/ExploreGardeners";
 import Loader from "../Components/Loader";
 import ErrorPage from "../Pages/ErrorPage";
+import DashBoardLayout from "../Layouts/DashBoardLayout";
+import DashBoard from "../Pages/DashBoard/DashBoard";
 
 export const router = createBrowserRouter([
   {
@@ -34,14 +36,7 @@ export const router = createBrowserRouter([
         path: "/login",
         Component: Login,
       },
-      {
-        path: "/shareTip",
-        element: (
-          <PrivateRoutes>
-            <ShareGardenTip></ShareGardenTip>
-          </PrivateRoutes>
-        ),
-      },
+
       {
         path: "/browseTips",
         hydrateFallbackElement: <Loader></Loader>,
@@ -59,17 +54,7 @@ export const router = createBrowserRouter([
           </PrivateRoutes>
         ),
       },
-      {
-        path: "/myTips",
-        hydrateFallbackElement: <Loader></Loader>,
-        loader: () =>
-          fetch(" https://green-circle-server.vercel.app/shareTipAll"),
-        element: (
-          <PrivateRoutes>
-            <MyTips></MyTips>
-          </PrivateRoutes>
-        ),
-      },
+
       {
         path: "/updateTip/:id",
         hydrateFallbackElement: <Loader></Loader>,
@@ -87,6 +72,41 @@ export const router = createBrowserRouter([
         loader: () =>
           fetch("https://green-circle-server.vercel.app/allGardeners"),
         Component: ExploreGardeners,
+      },
+    ],
+  },
+
+  // dashboard layout
+  {
+    path: "/dashBoard",
+    element: (
+      <PrivateRoutes>
+        <DashBoardLayout></DashBoardLayout>
+      </PrivateRoutes>
+    ),
+    children: [
+      {
+        index: "true",
+        Component: DashBoard,
+      },
+      {
+        path: "myTips",
+        hydrateFallbackElement: <Loader></Loader>,
+        loader: () =>
+          fetch(" https://green-circle-server.vercel.app/shareTipAll"),
+        element: (
+          <PrivateRoutes>
+            <MyTips></MyTips>
+          </PrivateRoutes>
+        ),
+      },
+      {
+        path: "shareTip",
+        element: (
+          <PrivateRoutes>
+            <ShareGardenTip></ShareGardenTip>
+          </PrivateRoutes>
+        ),
       },
     ],
   },

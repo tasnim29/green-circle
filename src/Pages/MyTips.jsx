@@ -3,10 +3,12 @@ import { MdBrowserUpdated, MdDeleteForever } from "react-icons/md";
 import { Link, useLoaderData } from "react-router";
 import Swal from "sweetalert2";
 import { AuthContext } from "../Context/AuthContext";
+import Loader from "../Components/Loader";
 
 const MyTips = () => {
   const { theme, user } = use(AuthContext);
   const initialTips = useLoaderData();
+
   // console.log(initialTips);
 
   const filteredTipsEmail = initialTips.filter(

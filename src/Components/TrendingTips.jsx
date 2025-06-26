@@ -16,7 +16,7 @@ const TrendingTips = () => {
   }, []);
   return (
     <div
-      className={`my-20 py-16  ${
+      className={`mt-20 py-16  ${
         theme === "dark" ? "bg-gray-950" : "bg-green-50"
       }`}
     >
@@ -34,10 +34,12 @@ const TrendingTips = () => {
         {trendingTips.map((tip, index) => (
           <div
             key={index}
-            className="flex flex-col justify-between bg-white p-6 rounded-xl text-center shadow-lg relative h-full"
+            className={`flex flex-col justify-between bg-white p-6 rounded-xl text-center shadow-lg relative h-full ${
+              theme === "dark" ? "border-3 border-yellow-500" : ""
+            }`}
           >
             <div>
-              <div className="w-12 h-12 bg-green-600 text-white font-bold rounded-full flex items-center justify-center absolute -top-6 left-1/2 transform -translate-x-1/2">
+              <div className="w-12 h-12 bg-primary text-white font-bold rounded-full flex items-center justify-center absolute -top-6 left-1/2 transform -translate-x-1/2">
                 {index + 1}
               </div>
               <div className="mt-8 mb-4">

@@ -37,10 +37,10 @@ const ShareGardenTip = () => {
   return (
     <div
       className={` py-10 transition duration-1000 ${
-        theme === "dark" ? "bg-gray-950 " : "bg-green-50"
+        theme === "dark" ? "bg-gray-950 " : ""
       }`}
     >
-      <div className="my-20 max-w-5xl mx-auto ">
+      <div className="max-w-5xl mx-auto ">
         <div className="text-center mb-10">
           <h1
             className={`text-4xl font-bold text-center mb-8 transition duration-1000 ${

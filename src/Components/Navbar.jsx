@@ -23,14 +23,10 @@ const Navbar = () => {
       <li className="font-semibold text-sm text-base-200 rounded-xl">
         <NavLink to="/browseTips">Browse Tips</NavLink>
       </li>
+
       {user && (
         <li className="font-semibold text-sm text-base-200 rounded-xl">
-          <NavLink to="/shareTip"> Share a Garden Tip</NavLink>
-        </li>
-      )}
-      {user && (
-        <li className="font-semibold text-sm text-base-200 rounded-xl">
-          <NavLink to="/myTips"> My Tips</NavLink>
+          <NavLink to="/dashBoard"> DashBoard</NavLink>
         </li>
       )}
     </>
@@ -59,16 +55,13 @@ const Navbar = () => {
             </label>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow rounded-box w-52"
+              className="menu bg-accent menu-sm dropdown-content mt-3 z-[1] p-2 shadow rounded-box w-52"
             >
               {links}
             </ul>
           </div>
-          <div className="flex items-center gap-2">
+          <div>
             <Logo></Logo>
-            <span className="text-base-200 font-bold text-2xl tracking-wide">
-              Green Circle
-            </span>
           </div>
         </div>
 
