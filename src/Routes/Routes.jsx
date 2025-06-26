@@ -23,8 +23,7 @@ export const router = createBrowserRouter([
       {
         index: true,
         hydrateFallbackElement: <Loader></Loader>,
-        loader: () =>
-          fetch("https://assignment-10-server-five-iota.vercel.app/activeG"),
+        loader: () => fetch("https://green-circle-server.vercel.app/activeG"),
         Component: Home,
       },
       {
@@ -46,17 +45,14 @@ export const router = createBrowserRouter([
       {
         path: "/browseTips",
         hydrateFallbackElement: <Loader></Loader>,
-        loader: () =>
-          fetch("https://assignment-10-server-five-iota.vercel.app/shareTip"),
+        loader: () => fetch("https://green-circle-server.vercel.app/shareTip"),
         Component: BrowseTips,
       },
       {
         path: "/tipDetails/:id",
         hydrateFallbackElement: <Loader></Loader>,
         loader: ({ params }) =>
-          fetch(
-            `https://assignment-10-server-five-iota.vercel.app/shareTip/${params.id}`
-          ),
+          fetch(`https://green-circle-server.vercel.app/shareTip/${params.id}`),
         element: (
           <PrivateRoutes>
             <TipDetailsPage></TipDetailsPage>
@@ -67,9 +63,7 @@ export const router = createBrowserRouter([
         path: "/myTips",
         hydrateFallbackElement: <Loader></Loader>,
         loader: () =>
-          fetch(
-            " https://assignment-10-server-five-iota.vercel.app/shareTipAll"
-          ),
+          fetch(" https://green-circle-server.vercel.app/shareTipAll"),
         element: (
           <PrivateRoutes>
             <MyTips></MyTips>
@@ -80,9 +74,7 @@ export const router = createBrowserRouter([
         path: "/updateTip/:id",
         hydrateFallbackElement: <Loader></Loader>,
         loader: ({ params }) =>
-          fetch(
-            `https://assignment-10-server-five-iota.vercel.app/shareTip/${params.id}`
-          ),
+          fetch(`https://green-circle-server.vercel.app/shareTip/${params.id}`),
         element: (
           <PrivateRoutes>
             <UpdateTip></UpdateTip>
@@ -93,9 +85,7 @@ export const router = createBrowserRouter([
         path: "/exploreGardeners",
         hydrateFallbackElement: <Loader></Loader>,
         loader: () =>
-          fetch(
-            "https://assignment-10-server-five-iota.vercel.app/allGardeners"
-          ),
+          fetch("https://green-circle-server.vercel.app/allGardeners"),
         Component: ExploreGardeners,
       },
     ],

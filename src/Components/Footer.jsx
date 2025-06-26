@@ -6,7 +6,7 @@ import Logo from "../Shared/Logo/Logo";
 
 const Footer = () => {
   return (
-    <footer className="footer footer-horizontal footer-center bg-green-900 text-primary-content p-10">
+    <footer className="footer footer-horizontal footer-center bg-primary max-w-7xl mx-auto text-primary-content p-10 rounded-md">
       <aside>
         <Logo></Logo>
         <p className="font-bold">

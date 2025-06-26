@@ -13,7 +13,7 @@ const LoveAble = () => {
     <div className="max-w-6xl mx-auto my-20">
       <h1
         className={`text-4xl font-bold text-center mb-8 transition duration-1000 ${
-          theme === "dark" ? "text-white " : "text-green-700"
+          theme === "dark" ? "text-white " : "text-primary"
         }`}
       >
         <Typewriter
@@ -40,9 +40,7 @@ const LoveAble = () => {
             className="absolute bottom-0 left-0 right-0 items-center flex gap-5 text-white p-4 rounded-b-xl"
           >
             <h1 className="text-3xl">We have solutions for your garden </h1>
-            <button className="bg-green-700 text-white text-xl btn">
-              Contact Us
-            </button>
+            <button className="btn btn-primary">Contact Us</button>
           </div>
         </div>
         {/* right div */}
@@ -51,7 +49,7 @@ const LoveAble = () => {
             <Lottie animationData={myAnimation} loop={true} />
           </div>
           <div className="flex flex-col md:flex-row gap-8 items-center justify-center">
-            <div className="cursor-pointer shadow-2xl  hover:bg-gray-300 bg-white p-5 text-center space-y-2 rounded-xl">
+            <div className="cursor-pointer shadow-lg  hover:bg-gray-300 bg-white p-5 text-center space-y-2 rounded-xl">
               <h2 className="text-3xl font-bold text-[#176AE5]">
                 <CountUp end={95} duration={40} suffix="%" />
               </h2>
@@ -63,7 +61,7 @@ const LoveAble = () => {
                 Plant Care Success Rate
               </p>
             </div>
-            <div className="cursor-pointer shadow-2xl  hover:bg-gray-300 bg-white p-5 text-center space-y-2 rounded-xl">
+            <div className="cursor-pointer shadow-lg  hover:bg-gray-300 bg-white p-5 text-center space-y-2 rounded-xl">
               <h2 className="text-3xl font-bold text-[#176AE5]">
                 <CountUp end={600} duration={20} suffix="+" />
               </h2>

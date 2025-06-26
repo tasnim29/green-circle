@@ -16,7 +16,7 @@ const ExploreGardenersCard = ({ gardener }) => {
       <div className="p-5 text-green-900 text-center">
         <h2 className="text-xl font-bold mb-2 flex items-center justify-center gap-2">
           {status === "active" && (
-            <span className="inline-block w-2 h-2 bg-green-500 rounded-full"></span>
+            <span className="inline-block w-2 h-2 bg-primary rounded-full"></span>
           )}
           {name}
           <span

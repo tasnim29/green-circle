@@ -37,7 +37,7 @@ const Navbar = () => {
   );
   return (
     <div className="w-full fixed top-0 z-50">
-      <div className="navbar bg-primary shadow-md px-4 lg:px-20 max-w-7xl mx-auto ">
+      <div className="navbar bg-primary shadow-md px-4 lg:px-20 max-w-7xl mx-auto rounded-md">
         {/* Navbar Start */}
         <div className="navbar-start">
           <div className="dropdown">
@@ -112,7 +112,7 @@ const Navbar = () => {
               </Link>
               <Link
                 to="/register"
-                className="px-4 py-2 bg-base-200 text-primary border rounded-md transition duration-200"
+                className="px-4 py-2 bg-base-200 text-primary border  rounded-md transition duration-200"
               >
                 Sign Up
               </Link>

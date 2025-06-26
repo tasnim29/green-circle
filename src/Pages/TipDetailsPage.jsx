@@ -24,7 +24,7 @@ const TipDetailsPage = () => {
 
   const handleLike = (id) => {
     // console.log(id);
-    fetch(`https://assignment-10-server-five-iota.vercel.app/shareTip/${id}`, {
+    fetch(`https://green-circle-server.vercel.app/shareTip/${id}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",

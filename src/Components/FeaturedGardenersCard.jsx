@@ -8,8 +8,8 @@ const FeaturedGardenersCard = ({ profile }) => {
   return (
     <div>
       <div
-        className={`flex flex-col justify-between h-full max-w-xs p-6 rounded-xl sm:px-12 bg-white mx-auto hover:scale-105 ${
-          theme === "dark" ? "shadow-xl shadow-white" : "shadow-2xl"
+        className={`flex flex-col justify-between h-full p-6 rounded-xl sm:px-12 bg-white mx-auto hover:scale-105 ${
+          theme === "dark" ? "shadow-xl shadow-white" : "shadow-lg"
         }`}
       >
         <img

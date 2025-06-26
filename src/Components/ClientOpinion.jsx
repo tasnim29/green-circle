@@ -14,7 +14,7 @@ const ClientOpinion = () => {
     <div className="max-w-6xl mx-auto">
       <h1
         className={`text-4xl font-bold text-center mb-8 transition duration-1000 ${
-          theme === "dark" ? "text-white " : "text-green-700"
+          theme === "dark" ? "text-white " : "text-primary"
         }`}
       >
         <Typewriter
@@ -33,7 +33,7 @@ const ClientOpinion = () => {
           <div
             key={index}
             className={`p-5 flex gap-5 items-center rounded-xl ${
-              theme === "dark" ? "shadow-xl shadow-white " : "shadow-2xl"
+              theme === "dark" ? "shadow-xl shadow-white " : "shadow-lg"
             }`}
           >
             <div className="relative inline-block w-32 flex-shrink-0">
