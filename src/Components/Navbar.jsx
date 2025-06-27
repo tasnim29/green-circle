@@ -23,6 +23,9 @@ const Navbar = () => {
       <li className="font-semibold text-sm text-base-200 rounded-xl">
         <NavLink to="/browseTips">Browse Tips</NavLink>
       </li>
+      <li className="font-semibold text-sm text-base-200 rounded-xl">
+        <NavLink to="/aboutUs">About Us</NavLink>
+      </li>
 
       {user && (
         <li className="font-semibold text-sm text-base-200 rounded-xl">

@@ -4,6 +4,7 @@ import Logo from "../Shared/Logo/Logo";
 import { AuthContext } from "../Context/AuthContext";
 import DashNav from "../Pages/DashBoard/DashNav";
 import DarkMode from "../Components/DarkMode";
+import { FaHome, FaSeedling, FaListUl } from "react-icons/fa";
 
 const DashBoardLayout = () => {
   const { user, theme, signOutUser } = use(AuthContext);
@@ -16,7 +17,7 @@ const DashBoardLayout = () => {
       <div className="drawer-content flex flex-col ">
         {/* Page content here */}
         <div
-          className={`navbar lg:px-24  w-full justify-between  shadow-sm ${
+          className={`navbar lg:px-24 transition duration-1000 w-full justify-between  shadow-sm ${
             theme === "dark" ? "bg-gray-950" : "bg-base-300 lg:bg-white"
           }`}
         >
@@ -67,24 +68,54 @@ const DashBoardLayout = () => {
           aria-label="close sidebar"
           className="drawer-overlay"
         ></label>
-        <ul className="menu bg-base-200 text-base-content min-h-full w-80 p-4 ">
+        <ul
+          className={`menu transition duration-1000 text-base-content min-h-full w-80 p-4 ${
+            theme === "dark" ? "bg-gray-950" : "bg-base-200"
+          }`}
+        >
           {/* Sidebar content here */}
-          <div className="mx-auto">
-            <Logo></Logo>
+          <div>
+            <Logo variant="dashboard"></Logo>
           </div>
 
           <div>
-            <li className="font-semibold text-xl text-primary rounded-xl">
-              <NavLink to="/dashBoard">DashBoard</NavLink>
+            <li
+              className={`font-semibold text-lg rounded-xl ${
+                theme == "dark" ? "text-base-200" : "text-primary"
+              }`}
+            >
+              <NavLink to="/dashBoard" className="flex items-center gap-2">
+                <FaHome /> DashBoard
+              </NavLink>
             </li>
+
             {user && (
-              <li className="font-semibold text-xl text-primary rounded-xl">
-                <NavLink to="/dashBoard/shareTip"> Share a Garden Tip</NavLink>
+              <li
+                className={`font-semibold text-lg rounded-xl ${
+                  theme == "dark" ? "text-base-200" : "text-primary"
+                }`}
+              >
+                <NavLink
+                  to="/dashBoard/shareTip"
+                  className="flex items-center gap-2"
+                >
+                  <FaSeedling /> Share a Garden Tip
+                </NavLink>
               </li>
             )}
+
             {user && (
-              <li className="font-semibold text-xl text-primary0 rounded-xl">
-                <NavLink to="/dashBoard/myTips"> My Tips</NavLink>
+              <li
+                className={`font-semibold text-lg rounded-xl ${
+                  theme == "dark" ? "text-base-200" : "text-primary"
+                }`}
+              >
+                <NavLink
+                  to="/dashBoard/myTips"
+                  className="flex items-center gap-2"
+                >
+                  <FaListUl /> My Tips
+                </NavLink>
               </li>
             )}
           </div>

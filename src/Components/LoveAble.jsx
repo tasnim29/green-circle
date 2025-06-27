@@ -29,20 +29,19 @@ const LoveAble = () => {
 
       <section className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10">
         {/* left div */}
-        <div className="relative w-full max-w-md mx-auto">
+        <div className="relative w-full  shadow-lg rounded-xl overflow-hidden">
           <img
-            className="w-full h-auto object-cover rounded-xl"
+            className="w-full h-auto object-cover"
             src={gardeners}
-            alt=""
+            alt="Gardeners"
           />
-          <div
-            style={{ backgroundColor: "rgba(0, 100, 0, 0.7)" }}
-            className="absolute bottom-0 left-0 right-0 items-center flex gap-5 text-white p-4 rounded-b-xl"
-          >
-            <h1 className="text-3xl">We have solutions for your garden </h1>
-            <button className="btn btn-primary">Contact Us</button>
+          <div className="absolute bottom-0 left-0 right-0 bg-green-900/80 text-white text-center px-6 py-4">
+            <h1 className="text-xl md:text-2xl font-semibold">
+              We have solutions for your garden 🌿
+            </h1>
           </div>
         </div>
+
         {/* right div */}
         <div>
           <div className="mx-auto mb-5" style={{ width: 220, height: 200 }}>

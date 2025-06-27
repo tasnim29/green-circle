@@ -16,6 +16,7 @@ import Loader from "../Components/Loader";
 import ErrorPage from "../Pages/ErrorPage";
 import DashBoardLayout from "../Layouts/DashBoardLayout";
 import DashBoard from "../Pages/DashBoard/DashBoard";
+import AboutUs from "../Pages/AboutUs";
 
 export const router = createBrowserRouter([
   {
@@ -35,6 +36,10 @@ export const router = createBrowserRouter([
       {
         path: "/login",
         Component: Login,
+      },
+      {
+        path: "/aboutUs",
+        Component: AboutUs,
       },
 
       {
