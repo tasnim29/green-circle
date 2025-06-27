@@ -3,6 +3,7 @@ import React from "react";
 import { MdEmail } from "react-icons/md";
 import { FaPhone } from "react-icons/fa";
 import Logo from "../Shared/Logo/Logo";
+import { NavLink } from "react-router";
 
 const Footer = () => {
   return (
@@ -14,6 +15,9 @@ const Footer = () => {
           <br />
           Providing reliable Greens since 2000
         </p>
+        <div className="font-semibold text-sm text-base-200 rounded-xl">
+          <NavLink to="/aboutUs">About Us</NavLink>
+        </div>
         <div className="flex flex-col items-center gap-1 mt-2">
           <p className="font-semibold">Contact Info</p>
           <div className="flex gap-4 items-center text-green-200">
