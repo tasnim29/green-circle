@@ -24,7 +24,7 @@ const Banner = () => {
       image: image3,
       title: "Nurture Nature",
       subtitle: "Start your green journey with us",
-      buttonText: "Start Gardening",
+      buttonText: <Link to="/">Start Gardening</Link>,
     },
   ];
 
